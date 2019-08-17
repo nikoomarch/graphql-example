@@ -43,7 +43,6 @@ class AllUserQuery extends Query
         $select = $fields->getSelect();
         $with = $fields->getRelations();
         $users = User::with($with)->select($select)->paginate($args['limit'], ['*'], 'page', $args['page']);
-        dd($users);
         return $users;
     }
 }
